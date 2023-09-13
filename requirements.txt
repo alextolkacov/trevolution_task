@@ -1,0 +1,9 @@
+pytest
+allure-pytest
+pytest-failed-screenshot
+flake8
+pytest-rerunfailures
+pytest-check
+selenium>=4.0
+pytest-failed-screenshot
+pytest-xdist
