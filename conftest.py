@@ -4,7 +4,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.remote.file_detector import LocalFileDetector
-from selenium.webdriver.remote.remote_connection import LOGGER, logging
+from selenium.webdriver.remote.remote_connection import logging
 from webdriver_manager.chrome import ChromeDriverManager
 
 logger = logging.getLogger()
@@ -12,7 +12,6 @@ logger = logging.getLogger()
 
 @pytest.fixture
 def browser():
-    LOGGER.setLevel(logging.WARNING)
     os_name = platform.system()
     options = webdriver.ChromeOptions()
     match os_name:
@@ -31,8 +30,8 @@ def browser():
             driver = webdriver.Chrome(service=Service(
                 ChromeDriverManager().install()))
         case _:
-            raise AssertionError(os_name + ' platform is not supported')
+            raise OSError(os_name + ' platform is not supported')
     driver.maximize_window()
-    driver.set_page_load_timeout(30)
+    driver.set_page_load_timeout(15)
     yield driver
     driver.quit()

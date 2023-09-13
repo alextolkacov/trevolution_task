@@ -13,7 +13,8 @@ class TestFlightsContainAllData:
     def test_flights_contain_all_data(self, browser):
         logger.info('Start test via direct URL')
         search_result_page = StartTest(browser) \
-            .via_direct_url()
+            .via_direct_url() \
+            .show_all_results()
 
         logger.info('Check that every found flight contains price '
                     '& Departure date is the same as from date '

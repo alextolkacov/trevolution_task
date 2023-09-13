@@ -1,7 +1,6 @@
 from datetime import datetime
 
 import allure
-from selenium.common import ElementClickInterceptedException
 
 from main.context.ui import UI
 from main.enums.locators.buttons import Buttons
@@ -17,8 +16,5 @@ class PageHelper(UI):
 
     @allure.step('Accept all cookies')
     def accept_all_cookies(self):
-        if self.is_element_present(Buttons.ACCEPT_ALL_COOKIES):
-            try:
-                self.click(Buttons.ACCEPT_ALL_COOKIES)
-            except ElementClickInterceptedException:
-                self.wait_to_be_clickable(Buttons.ACCEPT_ALL_COOKIES)
+        self.wait_until_present(Buttons.ACCEPT_ALL_COOKIES)
+        self.click(Buttons.ACCEPT_ALL_COOKIES)

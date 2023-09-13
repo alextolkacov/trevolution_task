@@ -54,3 +54,8 @@ class UI:
     def get_element_in_element(self, el, locator):
         self.wait_until_present(locator)
         return el.find_element(locator[0], locator[1])
+
+    def is_element_present_on_page(self, locator, wait=False):
+        if wait:
+            self.wait_until_page_is_complete()
+        return len(self.browser.find_elements(locator[0], locator[1])) != 0

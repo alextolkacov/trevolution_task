@@ -23,5 +23,3 @@ where:
 After tests are finished just run `allure serve allure_report` from your root to see a full report of a test run.
 
 But make sure that allure is installed on your laptop. If it's now -> `brew install allure`
-
- 

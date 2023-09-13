@@ -1,9 +1,10 @@
+import allure
+
 from main.context.ui import UI
 from main.enums.locators.buttons import Buttons
 from main.enums.locators.containers import Containers
 from main.enums.locators.values import Values
 from main.pages.your_trip_popup import YourTripPopup
-import allure
 
 
 class SearchResultPage(UI):
@@ -14,7 +15,7 @@ class SearchResultPage(UI):
 
     @allure.step('Expand to see all results')
     def show_all_results(self):
-        while self.is_element_present(Buttons.SHOW_ALL_RESULTS):
+        while self.is_element_present_on_page(Buttons.SHOW_ALL_RESULTS):
             self.click(Buttons.SHOW_ALL_RESULTS)
         return self
 
