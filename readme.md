@@ -2,7 +2,8 @@ Hey!
 
 Before you start make sure that Python 3.9 or newer is installed.
 
-If so, from the root run the command `pip3 install requirements.txt` to install on necessary dependencies.
+If so, from the root run the command `pip3 install requirements.txt` to install
+all necessary dependencies.
 
 How to run tests:
 1. in your terminal type `pytest test` to run all tests that are located in tests/ directory
@@ -20,6 +21,8 @@ where:
 * `allure_report` is a directory where allure reports will be saved
 * `--screenshot=on --screenshot_path=on` allows to sve screenshots in case of failure
 
-After tests are finished just run `allure serve allure_report` from your root to see a full report of a test run.
+After tests are finished just run `allure serve allure_report` from your root
+to see a full report of a test run.
 
-But make sure that allure is installed on your laptop. If it's now -> `brew install allure`
+But make sure that allure is installed on your laptop. If it's not
+-> `brew install allure`
