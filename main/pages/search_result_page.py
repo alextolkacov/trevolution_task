@@ -33,7 +33,9 @@ class SearchResultPage(UI):
 
     @allure.step('Get dates from search elements')
     def get_dates_from_search_elements(self, els: list) -> list:
-        return list(map(lambda x: self.get_element_in_element(x, Values.DATE_FROM).text, els))
+        return list(map(
+            lambda x: self.get_element_in_element(
+                x, Values.DATE_FROM).text, els))
 
     @allure.step('Get {1} flight price')
     def get_flight_price(self, search_result_number):
